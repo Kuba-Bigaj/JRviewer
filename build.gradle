@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id "org.jetbrains.kotlin.jvm" version "1.6.21"
 }
 
 group 'org.example'
@@ -14,7 +15,8 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-    'net.dean.jraw:JRAW:1.1.0'
+    implementation("com.faendir.jraw:lib:1.2.0")
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
 }
 
 test {
@@ -24,3 +26,4 @@ test {
 application{
     mainClass='Core'
 }
+apply plugin: 'kotlin'
