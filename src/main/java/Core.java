@@ -15,7 +15,7 @@ public class Core {
 
         try {
             RedditClient reddit = OAuthHelper.automatic(new OkHttpNetworkAdapter(new UserAgent("Java", "JRviewer", "1.0", "dank_soil")), Credentials.userlessApp("ybIMhGJzSDvEJ4ceKwkN-w", UUID.randomUUID()));
-            DefaultPaginator<Submission> subredditSource = reddit.subreddit("hentai").posts().limit(Paginator.RECOMMENDED_MAX_LIMIT).sorting(SubredditSort.TOP).timePeriod(TimePeriod.DAY).build();
+            DefaultPaginator<Submission> subredditSource = reddit.subreddit("pics").posts().limit(Paginator.RECOMMENDED_MAX_LIMIT).sorting(SubredditSort.TOP).timePeriod(TimePeriod.DAY).build();
 
             Display d = new Display(subredditSource);
             d.advance();
